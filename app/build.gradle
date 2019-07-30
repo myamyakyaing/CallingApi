@@ -22,7 +22,7 @@ android {
         }
         debug {
             ext.betaDistributionReleaseNotes="Release Notes for first build."
-            ext.betaDistributionEmails="thawzinaung.tza94@gmail.com"
+            ext.betaDistributionEmails="myamyakyaing.mmk1996@gmail.com"
             ext.betaDistributionNotifications=true
         }
     }
