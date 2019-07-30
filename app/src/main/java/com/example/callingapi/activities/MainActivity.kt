@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.crashlytics.android.Crashlytics
 import com.example.callingapi.R
 import com.example.callingapi.api.PostApi
 import com.example.callingapi.api.RestAdapter
 import com.example.callingapi.model.Post
+import io.fabric.sdk.android.Fabric
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_selected_id.*
 import kotlinx.android.synthetic.main.data_retrofit.*
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private val retrofitAdapter: RetrofitAdapter by lazy { RetrofitAdapter(this::onClickItem) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Fabric.with(this, Crashlytics())
         setContentView(R.layout.activity_main)
         rvRetrofit.layoutManager = LinearLayoutManager(this)
         rvRetrofit.adapter = retrofitAdapter
